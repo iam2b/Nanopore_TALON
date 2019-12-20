@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -l s_vmem=64G
+#$ -l mem_req=64G
+
+minimap2 -ax splice -uf -k14  --MD /lustre7/home/lustre4/akimitsu-lab/database/genome/hg38/hg38.fa ./190730_1_siCTRL/siCTRL_1d_pass.fastq > ./191220_minimap2_withMD/siCTRL_1d_pass_MD.sam  #Nanopore Direct RNA-seq
+minimap2 -ax splice -uf -k14 --MD /lustre7/home/lustre4/akimitsu-lab/database/genome/hg38/hg38.fa ./190730_2_siMTR4_1/siMTR4_1_1d_pass.fastq > ./191220_minimap2_withMD/siMTR4_1_1d_passMD.sam
+minimap2 -ax splice -uf -k14 --MD /lustre7/home/lustre4/akimitsu-lab/database/genome/hg38/hg38.fa ./190730_3_siMTR4_8/siMTR4_8_1d_pass.fastq > ./191220_minimap2_withMD/siM
